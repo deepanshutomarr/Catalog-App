@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         primaryTextTheme: GoogleFonts.latoTextTheme(),
       ),
       debugShowCheckedModeBanner: false,
- 
+
       darkTheme: ThemeData(
         brightness: Brightness.light,
       ),
