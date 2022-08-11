@@ -5,7 +5,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageUrl =
-        "https://static.toiimg.com/photo/msid-74623595/74623595.jpg";
+        "https://upload.wikimedia.org/wikipedia/commons/c/c0/Official_Photograph_of_Prime_Minister_Narendra_Modi_Potrait.png";
     return Drawer(
       child: Container(
         color: Colors.deepPurple,
@@ -30,40 +30,40 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
-                ),
-                title: Text(
-                  "Home",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
+              ),
+              title: Text(
+                "Home",
+                textScaleFactor: 1.2,
+                style: TextStyle(
                   color: Colors.white,
-                  ),
                 ),
+              ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
-                ),
-                title: Text(
-                  "Profile",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.2,
+                style: TextStyle(
                   color: Colors.white,
-                  ),
                 ),
+              ),
             ),
             ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
-                ),
-                title: Text(
-                  "Email me",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
+              ),
+              title: Text(
+                "Email me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
                   color: Colors.white,
-                  ),
                 ),
+              ),
             ),
           ],
         ),
