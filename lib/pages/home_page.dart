@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/models/catalog.dart';
 
 import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
 
 class Homepage extends StatelessWidget {
   final int days = 30;
@@ -16,11 +18,50 @@ class Homepage extends StatelessWidget {
 
         title: Text("Catalog App"),
       ),
-      body: Center(
-        child: Container(
-          child: Text("Welcome to $days Days of Flutter"),
-        ),
+
+      body: ListView.builder(
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: CatalogModel.items[index],
+          );
+        },
       ),
+
+      // Center(
+      //   child: Container(
+      //     child: Text("Welcome to $days days of flutter"),
+
+      //     // child: Text(context.runtimeType.toString()),
+
+      //   ),
+      // ),
+
+      // Container(
+      //   height: 100,
+      //   width: 100,
+      //   color: Colors.red,
+      // ),
+
+      //  Container(
+      //   constraints: BoxConstraints(
+      //     minHeight: 70,
+      //     maxHeight: 200,
+      //     minWidth: 70,
+      //     maxWidth: 200
+      //   ),
+
+      //   // height: 400,
+      //   // width: 400,
+      //   color: Colors.green,
+
+      //   child: Container(
+      //     // height: 10,
+      //     // width: 10,
+      //     color: Colors.red,
+      //   ),
+      // )
+
       drawer: MyDrawer(),
     );
   }
