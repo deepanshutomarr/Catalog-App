@@ -10,6 +10,9 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final dummyList = List.generate(5, (index) =>  CatalogModel.Items[0]);
+
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.white,
@@ -19,13 +22,19 @@ class Homepage extends StatelessWidget {
         title: Text("Catalog App"),
       ),
 
-      body: ListView.builder(
-        itemCount: CatalogModel.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(
-            item: CatalogModel.items[index],
-          );
-        },
+      body:  Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          // itemCount: CatalogModel.Items.length,
+
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              // item: CatalogModel.Items[index],
+              item: dummyList[index],
+            );
+          },
+        ),
       ),
 
       // Center(
