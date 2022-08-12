@@ -1,0 +1,68 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 12 Pro",
+            "desc": "Apple iPhone 12th generation",
+            "price": 15999,
+            "color": "#33505a",
+            "image": "https://m.media-amazon.com/images/I/61i8Vjb17SL._SL1500_.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Pixel 5",
+            "desc": "Google Pixel 5th generation",
+            "price": 25999,
+            "color": "#00ac51",
+            "image": "https://images-eu.ssl-images-amazon.com/images/I/41FZC7-Gh2L._SX300_SY300_QL70_FMwebp_.jpg"
+        },
+        {
+            "id": 3,
+            "name": "M1 Mackbook Air",
+            "desc": "Apple Mackbook Air with apple silicon",
+            "price": 35999,
+            "color": "#e0bfae",
+            "image": "https://helios-i.mashable.com/imagery/reviews/03y8gbj1mqCuexgXxFJ5vyX/hero-image.fill.size_1248x702.v1623391330.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Playstation 5",
+            "desc": "Sony Playstation 5th generation",
+            "price": 45999,
+            "color": "#544ee4",
+            "image": "https://assets.thehansindia.com/h-upload/2021/07/12/1600x960_1087894-playstation.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Airpods Pro",
+            "desc": "Apple Airpods Pro 1st generation",
+            "price": 55999,
+            "color": "#e3e4e9",
+            "image": "https://www.gizmochina.com/wp-content/uploads/2020/03/Apple-AirPods-3.jpg"
+        },
+        {
+            "id": 6,
+            "name": "iPad Pro",
+            "desc": "Apple iPad Pro 2022 edition",
+            "price": 65999,
+            "color": "#f73984",
+            "image": "https://fdn.gsmarena.com/imgroot/news/22/01/ipad-pro-magsafe-rumors/inline/-1200/gsmarena_002.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Galaxy S21 Ultra",
+            "desc": "Samsung Galaxy S21 Ultra 2022 edition",
+            "price": 75999,
+            "color": "#33505a",
+            "image": "https://m.media-amazon.com/images/I/81kfA-GtWwL._SY606_.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Nord 2 Pro 5G",
+            "desc": "OnePlus Nord 2 Pro 5G 2022 edition",
+            "price": 85999,
+            "color": "#7c95eb",
+            "image": "https://m.media-amazon.com/images/I/71DL9xoLB9L._SL1500_.jpg"
+        }
+    ]
+}

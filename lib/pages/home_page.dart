@@ -1,17 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 import 'package:flutter_demo/models/catalog.dart';
 
 import '../widgets/drawer.dart';
 import '../widgets/item_widget.dart';
 
-class Homepage extends StatelessWidget {
+class Homepage extends StatefulWidget {
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
   final int days = 30;
+
   final String name = "Codepur";
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+    loadData();
+  }
 
-    final dummyList = List.generate(5, (index) =>  CatalogModel.Items[0]);
+  loadData() async {
+    await Future.delayed(Duration(seconds: 2));
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodedData = jsonDecode(catalogJson);
+    var productsData = decodedData["products"];
+
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // final dummyList = List.generate(5, (index) => CatalogModel.Items[0]);
 
     return Scaffold(
       appBar: AppBar(
@@ -22,19 +49,28 @@ class Homepage extends StatelessWidget {
         title: Text("Catalog App"),
       ),
 
-      body:  Padding(
+      body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          // itemCount: CatalogModel.Items.length,
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: GridDelegate,
+                itemBuilder: itemBuilder,
+                itemCount: CatalogModel.items.length,
+              )
+            // ListView.builder(
+            //     itemCount: CatalogModel.items.length,
 
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              // item: CatalogModel.Items[index],
-              item: dummyList[index],
-            );
-          },
-        ),
+            //     // itemCount: dummyList.length,
+            //     itemBuilder: (context, index) {
+            //       return ItemWidget(
+            //         item: CatalogModel.items[index],
+            //         // item: dummyList[index],
+            //       );
+            //     },
+            // )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
 
       // Center(
