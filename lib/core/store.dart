@@ -11,4 +11,6 @@ class MyStore extends VxStore {
     cart = CartModel();
     cart.catalog = catalog;
   }
+
+  get items => null;
 }
