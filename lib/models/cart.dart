@@ -2,11 +2,16 @@ import 'package:flutter_demo/models/catalog.dart';
 
 class CartModel {
 
-  static final cartModel = CartModel._internal();
 
-  CartModel._internal();
+  //Code used to make Singleton
+  // static final cartModel = CartModel._internal();
 
-  factory CartModel() => cartModel;
+  // CartModel._internal();
+
+  // factory CartModel() => cartModel;
+
+
+
 
   //catalog field
   late CatalogModel _catalog;
