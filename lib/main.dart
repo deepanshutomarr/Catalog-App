@@ -43,10 +43,10 @@ class MyApp extends StatelessWidget {
       //   MyRoutes.cartRoute: (_, __) => MaterialPage(child: CartPage()),
       // }),
 
-      initialRoute: "/login",
+      initialRoute: "/login_page",
       // initialRoute: MyRoutes.homeRoute,
       routes: {
-        "/login": (context) => loginPage(),
+        "/login_page": (context) => loginPage(),
         MyRoutes.homeRoute: (context) => Homepage(),
         MyRoutes.loginRoute: (context) => loginPage(),
         MyRoutes.cartRoute: (context) => CartPage(),
