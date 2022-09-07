@@ -18,35 +18,39 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      // home: Homepage(),
+    // return MaterialApp.router(
+    return MaterialApp(
+      home: Homepage(),
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
 
-      routeInformationParser: VxInformationParser(),
-      routerDelegate: VxNavigator(routes: {
-        "/": (_, __) => MaterialPage(child: loginPage()),
-        MyRoutes.homeRoute: (_, __) => MaterialPage(child: Homepage()),
-        MyRoutes.homeDetailsRoute: (uri, params) {
-          return MaterialPage(
-                child: HomeDetailPage(
-              catalog: params,
-            ));
-        },
-        MyRoutes.loginRoute: (_, __) => MaterialPage(child: loginPage()),
-        MyRoutes.cartRoute: (_, __) => MaterialPage(child: CartPage()),
-      }),
-
-      // initialRoute: "/",
-      // initialRoute: MyRoutes.homeRoute,
-      // routes: {
-      // "/": (context) => loginPage(),
-      // MyRoutes.homeRoute: (context) => Homepage(),
-      // MyRoutes.loginRoute: (context) => loginPage(),
-      // MyRoutes.cartRoute: (context) => CartPage(),
+      // routeInformationParser: VxInformationParser(),
+      // routerDelegate: VxNavigator(routes: {
+      //   "/": (_, __) => MaterialPage(child: loginPage()),
+      //   MyRoutes.homeRoute: (_, __) => MaterialPage(child: Homepage()),
+      // MyRoutes.homeDetailsRoute: (uri, params) {
+      //   final catalog = (VxState.store as MyStore)
+      //       .catalog
+      //       .getById(int.parse(uri.queryParameters["id"]!));
+      //   return MaterialPage(
+      //       child: HomeDetailPage(
+      //     catalog: catalog,
+      //   ));
       // },
+      //   MyRoutes.loginRoute: (_, __) => MaterialPage(child: loginPage()),
+      //   MyRoutes.cartRoute: (_, __) => MaterialPage(child: CartPage()),
+      // }),
+
+      initialRoute: "/login",
+      // initialRoute: MyRoutes.homeRoute,
+      routes: {
+        "/login": (context) => loginPage(),
+        MyRoutes.homeRoute: (context) => Homepage(),
+        MyRoutes.loginRoute: (context) => loginPage(),
+        MyRoutes.cartRoute: (context) => CartPage(),
+      },
     );
   }
 }

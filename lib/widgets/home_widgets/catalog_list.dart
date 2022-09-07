@@ -41,19 +41,20 @@ class CatalogList extends StatelessWidget {
             itemBuilder: (context, index) {
               final catalog = CatalogModel.items[index];
               return InkWell(
-                onTap: () => context.vxNav.push(
-                    Uri(
-                        path: MyRoutes.homeDetailsRoute,
-                        queryParameters: {"id": catalog.id}),
-                    params: catalog),
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => HomeDetailsPage(
-                //       catalog: catalog,
-                //     ),
-                //   ),
-                // ),
+                onTap: () =>
+                    // context.vxNav.push(
+                    //     Uri(
+                    //         path: MyRoutes.homeDetailsRoute,
+                    //         queryParameters: {"id": catalog.id.toString()}),
+                    //     params: catalog),
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeDetailsPage(
+                      catalog: catalog,
+                    ),
+                  ),
+                ),
                 child: CatalogItem(catalog: catalog),
               );
             },
